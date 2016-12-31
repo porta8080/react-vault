@@ -1,12 +1,13 @@
 {
   "name": "react-vault",
   "version": "0.0.1",
-  "description": "",
+  "description": "ReactVault is backed by localStorage, keeps and shares states between components and is meant to used with pure React",
   "main": "index.js",
+  "repository": "porta8080/react-vault",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ping"
   },
-  "keywords": [],
-  "author": "",
+  "author": "porta8080 <adm.porta8080@gmail.com> (blog-porta8080.rhcloud.com)",
+  "keywords": ["react","state","component","storage"],
   "license": "ISC"
 }
