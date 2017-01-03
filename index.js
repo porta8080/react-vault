@@ -6,8 +6,8 @@ class ReactVault{
   }
 
   load(context,initial_state){
+    if(!initial_state) initial_state = {};
     this.context = context;
-    if(!initial_state || typeof initial_state !== 'object') initial_state = {};
     var obj = Object.assign(this.getGlobal(),this.context.state,initial_state);
     this.update(obj,false);
   }
@@ -34,17 +34,6 @@ class ReactVault{
     this.setGlobal(obj);
   }
 
-  clear(key){
-    if(!key) this.update({});
-    else{
-      if(this.has(key)){
-        var obj = this.context.state;
-        delete obj[key];
-        this.update(obj);
-      }
-    }
-  }
-
   setGlobal(obj){
     window.localStorage[this.key] = JSON.stringify(obj);
   }
@@ -57,6 +46,11 @@ class ReactVault{
       return {};
     }
   }
+
+  clear(){
+    this.update({});
+  }
 }
 
-module.exports = new Vault();
+module.exports = new ReactVault();
+
